@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.bw.dao.GoodsDao">
+ 	<insert id="insert">
+ 	insert into goods values
+ 	<foreach collection="list" item="li" separator=",">
+ 	(#{li.id},#{li.name},#{li.price},#{li.sales})
+ 	</foreach>
+ 	</insert>
+ </mapper>
