@@ -14,8 +14,16 @@
 <body>
 	<form action="/list.do" method="post">
 	价格:<input type="text" name="p1" value="${c.p1 }">
-	-<input type="text" name="p2" value="${c.p2 }"><br>
+	-<input type="text" name="p2" value="${c.p2 }">
 	百分比:<input type="text" name="sale" value="${c.sale }">%
+	排序:<select name="method">
+			<option value="sales" ${c.method=="sales"?"selected":"" }>销售百分比</option>
+			<option value="price" ${c.method=="price"?"selected":"" }>价格</option>
+		</select>
+		<select name="type">
+			<option value="asc"  ${c.type=="asc"?"selected":"" }>正序</option>
+			<option value="desc" ${c.type=="desc"?"selected":"" }>倒序</option>
+		</select>
 	<input type="submit" value="查询">
 		<table>
 			<tr>
