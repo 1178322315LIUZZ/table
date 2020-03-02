@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bw.dao.GoodsDao;
+import com.bw.entity.Condition;
 import com.bw.entity.Goods;
 import com.bw.service.GoodsService;
 @Service
@@ -16,6 +17,11 @@ public class GoodsServiceImpl implements GoodsService {
 	public int insert(List<Goods> goods) {
 		// TODO Auto-generated method stub
 		return goodsDao.insert(goods);
+	}
+
+	public List<Goods> list(Condition con) {
+		// TODO Auto-generated method stub
+		return goodsDao.list(con);
 	}
 	
 }

@@ -9,4 +9,18 @@
  	(#{li.id},#{li.name},#{li.price},#{li.sales})
  	</foreach>
  	</insert>
+ 	<select id="list" resultType="Goods">
+ 		select * from goods
+ 		<where>
+ 			<if test="p1 != null and p1 !=''">
+ 				and price >=#{p1}
+ 			</if>
+ 			<if test="p2 != null and p2 !=''">
+ 				and price &lt;#{p2}
+ 			</if>
+ 			<if test="sale != null and sale !=''">
+ 				and sales=#{sale}
+ 			</if>
+ 		</where>
+ 	</select>
  </mapper>
